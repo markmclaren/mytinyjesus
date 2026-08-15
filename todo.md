@@ -21,3 +21,4 @@
 - [x] Start the black horizon half a Jesus-height above the figure and blind it down to his feet.
 - [x] Start a black blind at least 1.5 Jesus heights tall and move it in lockstep with Jesus’ slide-in.
 - [x] Raise the blind start to 1.5 Jesus heights above his feet and begin it on the same first frame as Jesus.
+- [x] Use one shared native CSS timing model for a smoother blind and visibly simultaneous Jesus slide-in.
