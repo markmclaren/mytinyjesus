@@ -29,7 +29,7 @@ a {
   --figure-height: clamp(122px, 13.7vw, 168px);
   --floor-min-height: clamp(183px, 20.55vw, 252px);
   --horizon: min(62%, calc(100vh - var(--floor-min-height)));
-  --floor-start-offset: clamp(61px, 6.85vw, 84px);
+  --floor-start-offset: clamp(183px, 20.55vw, 252px);
   --figure-right: clamp(8px, 2vw, 28px);
   --bubble-right: clamp(10px, 1.8vw, 24px);
   --bubble-tail-right: clamp(48px, 5.2vw, 70px);
@@ -172,15 +172,15 @@ a {
 /* The class is added after two animation frames, guaranteeing the initial
    collapsed/off-screen states paint before the entrance sequence begins. */
 .tiny-jesus-stage.entrance-play .reflective-floor {
-  animation: floor-blind 980ms 80ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  animation: floor-blind 980ms 0ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
 
 .tiny-jesus-stage.entrance-play .jesus-figure {
-  animation: jesus-slide-in 980ms 80ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  animation: jesus-slide-in 980ms 0ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
 
 .tiny-jesus-stage.entrance-play .jesus-reflection {
-  animation: reflection-slide-in 980ms 80ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  animation: reflection-slide-in 980ms 0ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
 
 .speech-bubble__message {
@@ -275,16 +275,16 @@ a {
 @media (prefers-reduced-motion: reduce) {
   /* Preserve the signature entrance while reducing its duration and travel. */
   .tiny-jesus-stage.entrance-play .reflective-floor {
-    animation: floor-blind 400ms 40ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    animation: floor-blind 400ms 0ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
   }
 
   .tiny-jesus-stage.entrance-play .jesus-figure {
     transform: translateX(calc(100vw + 140px));
-    animation: jesus-slide-in 400ms 40ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    animation: jesus-slide-in 400ms 0ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
   }
 
   .tiny-jesus-stage.entrance-play .jesus-reflection {
     transform: translateX(calc(100vw + 140px)) scaleY(-1);
-    animation: reflection-slide-in 400ms 40ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    animation: reflection-slide-in 400ms 0ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
   }
 }
