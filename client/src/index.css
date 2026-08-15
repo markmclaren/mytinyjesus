@@ -12,6 +12,201 @@
     #000000;
 }
 
+/* MyTinyJesus — archive-informed 2009 Flash composition
+   Bright upper field, black reflective floor, stationary central figure. */
+.tiny-jesus-stage {
+  --horizon: 62%;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  user-select: none;
+}
+
+.bright-field {
+  position: absolute;
+  inset: 0 0 auto;
+  height: var(--horizon);
+  background: #fdfdfc;
+}
+
+.reflective-floor {
+  position: absolute;
+  inset: var(--horizon) 0 0;
+  background:
+    linear-gradient(180deg, rgba(41, 41, 41, 0.3) 0, transparent 4px),
+    linear-gradient(90deg, rgba(255,255,255,0.025), transparent 22%, transparent 78%, rgba(255,255,255,0.018)),
+    #020202;
+}
+
+.archive-mark {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #a8a8a8;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+}
+
+.archive-mark i {
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: #b7b7b7;
+}
+
+.jesus-figure,
+.jesus-reflection {
+  position: absolute;
+  left: 50%;
+  width: clamp(100px, 12.6vw, 140px);
+  pointer-events: none;
+}
+
+.jesus-figure {
+  top: calc(var(--horizon) - clamp(150px, 19vw, 212px));
+  transform: translateX(-50%);
+  z-index: 3;
+  filter: drop-shadow(0 5px 3px rgba(0,0,0,0.18));
+}
+
+.jesus-reflection {
+  top: calc(var(--horizon) + clamp(150px, 19vw, 212px));
+  transform: translateX(-50%) scaleY(-1);
+  transform-origin: top center;
+  z-index: 2;
+  opacity: 0.23;
+  filter: grayscale(1) contrast(0.75) brightness(1.35);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 43%, transparent 92%);
+}
+
+.jesus-figure img,
+.jesus-reflection img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.speech-bubble {
+  position: absolute;
+  z-index: 5;
+  top: clamp(38px, calc(var(--horizon) - 360px), 84px);
+  left: 50%;
+  width: min(310px, calc(100vw - 42px));
+  margin: 0;
+  padding: 11px 13px 12px;
+  border: 1px solid #c3c3c3;
+  border-radius: 8px;
+  background: #fff;
+  color: #262626;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.18);
+  cursor: pointer;
+  font: 11px/1.36 Arial, Helvetica, sans-serif;
+  text-align: left;
+  opacity: 0;
+  transform: translateX(-50%) translateY(7px) scale(0.985);
+  transition: opacity 170ms cubic-bezier(0.23, 1, 0.32, 1), transform 170ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 150ms ease-out;
+}
+
+.speech-bubble:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.21);
+}
+
+.speech-bubble:focus-visible {
+  outline: 2px solid #0084b4;
+  outline-offset: 3px;
+}
+
+.speech-bubble--visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.speech-bubble__message {
+  display: block;
+  padding-bottom: 7px;
+}
+
+.speech-bubble__meta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #999;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.speech-bubble__meta strong {
+  color: #333;
+  font-weight: 700;
+}
+
+.speech-bubble__meta em {
+  color: #0084b4;
+  font-style: normal;
+}
+
+.speech-bubble__meta time {
+  margin-left: auto;
+  color: #9e9e9e;
+  font-size: 9px;
+}
+
+.speech-bubble__tail {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  border-right: 1px solid #c3c3c3;
+  border-bottom: 1px solid #c3c3c3;
+  background: #fff;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.floor-note,
+.confess-link {
+  position: absolute;
+  z-index: 4;
+  bottom: 13px;
+  color: #606060;
+  font-size: 9px;
+  letter-spacing: 0.01em;
+}
+
+.floor-note { left: 16px; }
+
+.confess-link {
+  right: 16px;
+  color: #8c8c8c;
+  text-decoration: none;
+  border-bottom: 1px solid #494949;
+  padding-bottom: 1px;
+  transition: color 140ms ease-out, border-color 140ms ease-out;
+}
+
+.confess-link:hover {
+  color: #eee;
+  border-color: #aaa;
+}
+
+@media (max-height: 530px) {
+  .tiny-jesus-stage { --horizon: 59%; }
+  .floor-note { display: none; }
+  .archive-mark { top: 9px; }
+}
+
+@media (max-width: 470px) {
+  .tiny-jesus-stage { --horizon: 58%; }
+  .speech-bubble { top: 46px; }
+  .archive-mark span:last-child { display: none; }
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

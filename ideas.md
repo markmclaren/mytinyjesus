@@ -29,18 +29,18 @@ Late-2000s Flash widget / Web 2.0 sidebar gadget
 - Confess button: `#e8e8e8` with `#999` text
 
 ### Layout Paradigm
-Full-viewport canvas. Jesus wanders freely. Bubbles stack above him and drift upward. No fixed grid.
+Full-viewport stage with a bright upper field and a black reflective floor. Jesus is stationary at the horizon line; bubbles appear above him, while a vertically inverted, fading reflection occupies the floor.
 
 ### Signature Elements
-1. Inertia spring physics — Jesus glides, never teleports
-2. Speech bubble slide-open animation (panel_mc style)
-3. "Confess" mailto button in the bottom corner
+1. A hard bright-field / black-floor horizon line
+2. A vertically inverted, masked reflection of Jesus below the line
+3. Speech bubble slide-open animation (panel_mc style)
 
 ### Interaction Philosophy
-Passive observation. The user watches Jesus wander and reads his tweets. Clicking a bubble opens the tweet link. The confess button is the only active affordance.
+Passive observation. The user watches the fixed reflection composition and reads one message at a time. Clicking a bubble advances the message. The confess button is a small secondary affordance.
 
 ### Animation
-- Jesus position: spring physics, `inertiaConstant = 0.2`, `speed = 0.4`
+- Jesus remains fixed at the horizon, matching the archive-informed composition
 - Bubble entrance: scale from 0.95 + opacity 0 → 1 over 300ms ease-out
 - Bubble exit: fade + scale down over 200ms
 - Bubbles drift slightly upward over their lifetime

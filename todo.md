@@ -1,0 +1,4 @@
+- [x] Confirm the original stage split and reflection behaviour from archived assets and ActionScript.
+- [x] Write 100 additional fictional, period-authentic MyTinyJesus tweets.
+- [x] Replace free-roaming behaviour with the original stationary/reflection-based composition.
+- [x] Test the updated recreation against the archived visual evidence and deliver it.
