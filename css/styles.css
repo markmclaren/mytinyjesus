@@ -27,9 +27,9 @@ a {
 
 .tiny-jesus-stage {
   --horizon: 62%;
-  --figure-x: 76%;
-  --bubble-x: var(--figure-x);
-  --bubble-tail-x: 50%;
+  --figure-right: clamp(8px, 2vw, 28px);
+  --bubble-right: clamp(10px, 1.8vw, 24px);
+  --bubble-tail-right: clamp(48px, 5.2vw, 70px);
   position: fixed;
   inset: 0;
   overflow: hidden;
@@ -58,6 +58,10 @@ a {
       rgba(255, 255, 255, 0.018)
     ),
     #020202;
+  transform: scaleY(0);
+  transform-origin: top center;
+  animation: floor-blind 740ms 70ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  will-change: transform;
 }
 
 .archive-mark {
@@ -83,22 +87,24 @@ a {
 .jesus-figure,
 .jesus-reflection {
   position: absolute;
-  left: var(--figure-x);
-  width: clamp(100px, 12.6vw, 140px);
+  right: var(--figure-right);
+  width: clamp(76px, 8.4vw, 104px);
   pointer-events: none;
 }
 
 .jesus-figure {
-  top: calc(var(--horizon) - clamp(150px, 19vw, 212px));
+  top: calc(var(--horizon) - clamp(122px, 13.7vw, 168px));
   z-index: 3;
-  transform: translateX(-50%);
+  transform: translateX(calc(100vw + 140px));
   filter: drop-shadow(0 5px 3px rgba(0, 0, 0, 0.18));
+  animation: jesus-slide-in 720ms 220ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  will-change: transform;
 }
 
 .jesus-reflection {
-  top: calc(var(--horizon) + clamp(150px, 19vw, 212px));
+  top: calc(var(--horizon) + clamp(122px, 13.7vw, 168px));
   z-index: 2;
-  transform: translateX(-50%) scaleY(-1);
+  transform: translateX(calc(100vw + 140px)) scaleY(-1);
   transform-origin: top center;
   opacity: 0.23;
   filter: grayscale(1) contrast(0.75) brightness(1.35);
@@ -108,6 +114,8 @@ a {
     rgba(0, 0, 0, 0.4) 43%,
     transparent 92%
   );
+  animation: reflection-slide-in 720ms 220ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  will-change: transform;
 }
 
 .jesus-figure img,
@@ -120,8 +128,8 @@ a {
 .speech-bubble {
   position: absolute;
   z-index: 5;
-  top: clamp(105px, calc(var(--horizon) - 285px), 168px);
-  left: var(--bubble-x);
+  top: clamp(128px, calc(var(--horizon) - 255px), 210px);
+  right: var(--bubble-right);
   width: min(310px, calc(100vw - 42px));
   margin: 0;
   padding: 11px 13px 12px;
@@ -137,7 +145,7 @@ a {
     sans-serif;
   text-align: left;
   opacity: 0;
-  transform: translateX(-50%) translateY(7px) scale(0.985);
+  transform: translateY(7px) scale(0.985);
   transition:
     opacity 170ms cubic-bezier(0.23, 1, 0.32, 1),
     transform 170ms cubic-bezier(0.23, 1, 0.32, 1),
@@ -155,7 +163,7 @@ a {
 
 .speech-bubble--visible {
   opacity: 1;
-  transform: translateX(-50%) translateY(0) scale(1);
+  transform: translateY(0) scale(1);
 }
 
 .speech-bubble__message {
@@ -185,17 +193,16 @@ a {
 .speech-bubble__tail {
   position: absolute;
   bottom: -8px;
-  left: var(--bubble-tail-x);
+  right: var(--bubble-tail-right);
   width: 14px;
   height: 14px;
   border-right: 1px solid #c3c3c3;
   border-bottom: 1px solid #c3c3c3;
   background: #fff;
-  transform: translateX(-50%) rotate(45deg);
+  transform: translateX(50%) rotate(45deg);
 }
 
-.floor-note,
-.confess-link {
+.floor-note {
   position: absolute;
   z-index: 4;
   bottom: 13px;
@@ -208,20 +215,16 @@ a {
   left: 16px;
 }
 
-.confess-link {
-  right: 16px;
-  color: #8c8c8c;
-  text-decoration: none;
-  border-bottom: 1px solid #494949;
-  padding-bottom: 1px;
-  transition:
-    color 140ms ease-out,
-    border-color 140ms ease-out;
+@keyframes floor-blind {
+  to { transform: scaleY(1); }
 }
 
-.confess-link:hover {
-  color: #eee;
-  border-color: #aaa;
+@keyframes jesus-slide-in {
+  to { transform: translateX(0); }
+}
+
+@keyframes reflection-slide-in {
+  to { transform: translateX(0) scaleY(-1); }
 }
 
 @media (max-height: 530px) {
@@ -239,14 +242,26 @@ a {
 @media (max-width: 470px) {
   .tiny-jesus-stage {
     --horizon: 58%;
-    --figure-x: 70%;
-    --bubble-x: 55%;
-    --bubble-tail-x: 67%;
+    --figure-right: 8px;
+    --bubble-right: 12px;
+    --bubble-tail-right: 34px;
   }
   .speech-bubble {
-    top: clamp(120px, calc(var(--horizon) - 270px), 200px);
+    top: clamp(140px, calc(var(--horizon) - 230px), 255px);
   }
   .archive-mark span:last-child {
     display: none;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reflective-floor,
+  .jesus-figure,
+  .jesus-reflection {
+    animation: none;
+  }
+
+  .reflective-floor { transform: scaleY(1); }
+  .jesus-figure { transform: translateX(0); }
+  .jesus-reflection { transform: translateX(0) scaleY(-1); }
 }

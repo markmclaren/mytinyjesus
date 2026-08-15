@@ -53,7 +53,7 @@ import { MESSAGES } from "./messages.js";
     }, 170);
   }
 
-  revealCurrent();
+  window.setTimeout(revealCurrent, 760);
   timerId = window.setInterval(showNext, 9000);
   bubble.addEventListener("click", showNext);
   window.addEventListener("beforeunload", () => window.clearInterval(timerId), {
