@@ -3,3 +3,5 @@
 - [x] Replace free-roaming behaviour with the original stationary/reflection-based composition.
 - [x] Test the updated recreation against the archived visual evidence and deliver it.
 - [x] Move the stationary figure and reflection to the right-side horizon position.
+- [x] Write and add 75 more fictional, period-authentic MyTinyJesus messages.
+- [x] Confirm the figure and its reflection remain anchored at the right-side horizon position.

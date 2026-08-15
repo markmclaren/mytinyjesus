@@ -6,6 +6,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { ADDITIONAL_TWEETS } from "@/data/additionalTweets";
+import { MORE_TWEETS } from "@/data/moreTweets";
 
 interface Tweet {
   id: string;
@@ -45,7 +46,7 @@ const ORIGINAL_SET: Tweet[] = [
   { id: "25", text: "I have come that they may have life, and have it to the full. Full like a good inbox. Zero unread.", screenName: "mytinyjesus", name: "My Tiny Jesus", date: "Sep 15, 2009" },
 ];
 
-const TWEET_POOL: Tweet[] = [...ORIGINAL_SET, ...ADDITIONAL_TWEETS];
+const TWEET_POOL: Tweet[] = [...ORIGINAL_SET, ...ADDITIONAL_TWEETS, ...MORE_TWEETS];
 const MESSAGE_INTERVAL = 9000;
 
 export default function Widget() {
@@ -103,7 +104,7 @@ export default function Widget() {
         <img src="/manus-storage/jesus_transparent_e866f36b.png" alt="" draggable={false} />
       </div>
 
-      <div className="floor-note">125 fictional messages · click a bubble for another</div>
+      <div className="floor-note">200 fictional messages · click a bubble for another</div>
       <a className="confess-link" href="mailto:confess@mytinyjesus.com">confess</a>
     </main>
   );

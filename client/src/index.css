@@ -16,7 +16,7 @@
    Bright upper field, black reflective floor, stationary central figure. */
 .tiny-jesus-stage {
   --horizon: 62%;
-  --figure-x: 72%;
+  --figure-x: 76%;
   --bubble-x: var(--figure-x);
   --bubble-tail-x: 50%;
   position: fixed;
