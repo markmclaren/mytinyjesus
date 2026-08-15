@@ -6,4 +6,5 @@
 - [x] Write and add 75 more fictional, period-authentic MyTinyJesus messages.
 - [x] Confirm the figure and its reflection remain anchored at the right-side horizon position.
 - [x] Convert the React widget to a framework-free vanilla JavaScript implementation.
-- [ ] Push the current project version to github.com/markmclaren/mytinyjesus.
+- [x] Push the current project version to github.com/markmclaren/mytinyjesus.
+- [x] Write a README.md explaining the vanilla JavaScript recreation and its provenance.

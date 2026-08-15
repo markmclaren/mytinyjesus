@@ -1,0 +1,60 @@
+# My Tiny Jesus
+
+> A framework-free, archive-informed recreation of the **MyTinyJesus** Flash widget.
+
+This project recreates the visual language of a small late-2000s web widget: a tiny Jesus figure sits at the edge of a bright upper field and black reflective floor, while short speech bubbles rotate overhead. The composition is intentionally spare and avoids adding modern application chrome.
+
+The historical site can still be inspected through an Internet Archive capture.[1]
+
+## Important provenance note
+
+The **200 messages** in this project are **original fictional writing**, created in the playful, period-appropriate voice of the concept. They are not recovered posts from an original `@mytinyjesus` account. The archive did not provide a complete historical tweet corpus, so the project labels the message collection as fictional in the interface and source code.
+
+## Implementation
+
+The runtime is deliberately small and uses **no React or other browser framework**.
+
+| Area | Location | Purpose |
+|---|---|---|
+| Page structure | `client/index.html` | The full widget markup and page entry point. |
+| Visual styling | `client/vanilla/styles.css` | Horizon, speech bubble, responsive layout, and reflection mask. |
+| Widget behaviour | `client/vanilla/app.js` | Message shuffling, 9-second rotation, and click-to-advance interaction. |
+| Message collection | `client/vanilla/messages.js` | The 200 original fictional messages as an ES module. |
+| Development/build configuration | `vite.config.ts` | Static Vite workflow and the project’s local asset proxy. |
+
+### Behaviour
+
+The speech bubble cycles through a shuffled message pool every nine seconds. Clicking the bubble immediately advances to another message. The Jesus figure and vertically inverted reflection are anchored on the right side of the viewport; the mobile layout offsets the bubble so its tail remains pointed at the figure.
+
+## Run locally
+
+Install dependencies and start the development server:
+
+```bash
+pnpm install
+pnpm dev
+```
+
+Create a production build with:
+
+```bash
+pnpm build
+```
+
+The project also includes a lightweight syntax check for its browser JavaScript:
+
+```bash
+pnpm check
+```
+
+## Asset note
+
+The Jesus sprite is referenced from the managed static-asset path used by this project’s hosted environment. If you run an exported clone outside that environment, replace the two image paths in `client/index.html` with your own local or hosted copy of the sprite.
+
+## License and attribution
+
+This repository is a non-affiliated recreation for preservation and experimentation. It does not claim to be the original MyTinyJesus project or an archive of its original social-media output.
+
+## References
+
+[1]: https://web.archive.org/web/20090205063029/http://mytinyjesus.com/ "Archived MyTinyJesus.com capture — Internet Archive"
