@@ -8,3 +8,6 @@
 - [x] Convert the React widget to a framework-free vanilla JavaScript implementation.
 - [x] Push the current project version to github.com/markmclaren/mytinyjesus.
 - [x] Write a README.md explaining the vanilla JavaScript recreation and its provenance.
+- [ ] Verify that the current index.html is present on the GitHub main branch.
+- [x] Sync the cleaned GitHub project and move the speech bubble closer to Jesus without the account handle.
+- [x] Merge the user’s latest README edit before pushing the synchronized visual update.

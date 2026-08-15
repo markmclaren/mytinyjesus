@@ -120,7 +120,7 @@ a {
 .speech-bubble {
   position: absolute;
   z-index: 5;
-  top: clamp(38px, calc(var(--horizon) - 360px), 84px);
+  top: clamp(105px, calc(var(--horizon) - 285px), 168px);
   left: var(--bubble-x);
   width: min(310px, calc(100vw - 42px));
   margin: 0;
@@ -176,11 +176,6 @@ a {
   color: #333;
   font-weight: 700;
 }
-.speech-bubble__meta em {
-  color: #0084b4;
-  font-style: normal;
-}
-
 .speech-bubble__meta time {
   margin-left: auto;
   color: #9e9e9e;
@@ -249,7 +244,7 @@ a {
     --bubble-tail-x: 67%;
   }
   .speech-bubble {
-    top: 46px;
+    top: clamp(120px, calc(var(--horizon) - 270px), 200px);
   }
   .archive-mark span:last-child {
     display: none;

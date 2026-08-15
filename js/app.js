@@ -9,7 +9,6 @@ import { MESSAGES } from "./messages.js";
   const bubble = document.querySelector(".speech-bubble");
   const messageElement = document.querySelector(".speech-bubble__message");
   const nameElement = document.querySelector(".speech-bubble__meta strong");
-  const handleElement = document.querySelector(".speech-bubble__meta em");
   const dateElement = document.querySelector(".speech-bubble__meta time");
   const countElement = document.querySelector(".message-count");
 
@@ -17,7 +16,6 @@ import { MESSAGES } from "./messages.js";
     !bubble ||
     !messageElement ||
     !nameElement ||
-    !handleElement ||
     !dateElement ||
     messages.length === 0
   ) {
@@ -36,7 +34,6 @@ import { MESSAGES } from "./messages.js";
   function setMessage(message) {
     messageElement.textContent = message.text;
     nameElement.textContent = message.name;
-    handleElement.textContent = `@${message.screenName}`;
     dateElement.textContent = message.date;
   }
 
