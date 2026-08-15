@@ -2,3 +2,4 @@
 - [x] Write 100 additional fictional, period-authentic MyTinyJesus tweets.
 - [x] Replace free-roaming behaviour with the original stationary/reflection-based composition.
 - [x] Test the updated recreation against the archived visual evidence and deliver it.
+- [x] Move the stationary figure and reflection to the right-side horizon position.

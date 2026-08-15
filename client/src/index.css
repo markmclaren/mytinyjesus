@@ -16,6 +16,9 @@
    Bright upper field, black reflective floor, stationary central figure. */
 .tiny-jesus-stage {
   --horizon: 62%;
+  --figure-x: 72%;
+  --bubble-x: var(--figure-x);
+  --bubble-tail-x: 50%;
   position: fixed;
   inset: 0;
   overflow: hidden;
@@ -63,7 +66,7 @@
 .jesus-figure,
 .jesus-reflection {
   position: absolute;
-  left: 50%;
+  left: var(--figure-x);
   width: clamp(100px, 12.6vw, 140px);
   pointer-events: none;
 }
@@ -96,7 +99,7 @@
   position: absolute;
   z-index: 5;
   top: clamp(38px, calc(var(--horizon) - 360px), 84px);
-  left: 50%;
+  left: var(--bubble-x);
   width: min(310px, calc(100vw - 42px));
   margin: 0;
   padding: 11px 13px 12px;
@@ -160,7 +163,7 @@
 .speech-bubble__tail {
   position: absolute;
   bottom: -8px;
-  left: 50%;
+  left: var(--bubble-tail-x);
   width: 14px;
   height: 14px;
   border-right: 1px solid #c3c3c3;
@@ -202,7 +205,12 @@
 }
 
 @media (max-width: 470px) {
-  .tiny-jesus-stage { --horizon: 58%; }
+  .tiny-jesus-stage {
+    --horizon: 58%;
+    --figure-x: 70%;
+    --bubble-x: 55%;
+    --bubble-tail-x: 67%;
+  }
   .speech-bubble { top: 46px; }
   .archive-mark span:last-child { display: none; }
 }
