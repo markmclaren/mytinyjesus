@@ -14,38 +14,17 @@ The **200 messages** in this project are **original fictional writing**, created
 
 The runtime is deliberately small and uses **no React or other browser framework**.
 
-| Area                            | Location         | Purpose                                                                 |
-| ------------------------------- | ---------------- | ----------------------------------------------------------------------- |
-| Page structure                  | `index.html`     | The full widget markup and page entry point.                            |
-| Visual styling                  | `styles.css`     | Horizon, speech bubble, responsive layout, and reflection mask.         |
-| Widget behaviour                | `app.js`         | Message shuffling, 9-second rotation, and click-to-advance interaction. |
-| Message collection              | `messages.js`    | The 200 original fictional messages as an ES module.                    |
-| Development/build configuration | `vite.config.js` | Static Vite workflow for development and bundling.                      |
+| Area                            | Location           | Purpose                                                                 |
+| ------------------------------- | ------------------ | ----------------------------------------------------------------------- |
+| Page structure                  | `index.html`       | The full widget markup and page entry point.                            |
+| Visual styling                  | `css/styles.css`   | Horizon, speech bubble, responsive layout, and reflection mask.         |
+| Widget behaviour                | `js/app.js`        | Message shuffling, 9-second rotation, and click-to-advance interaction. |
+| Message collection              | `js/messages.js`   | The 200 original fictional messages as an ES module.                    |
+| Figure assets      | `images/jesus.png` | Transparent sprite of Jesus.                                            |
 
 ### Behaviour
 
 The speech bubble cycles through a shuffled message pool every nine seconds. Clicking the bubble immediately advances to another message. The Jesus figure and vertically inverted reflection are anchored on the right side of the viewport; the mobile layout offsets the bubble so its tail remains pointed at the figure.
-
-## Run locally
-
-Install dependencies and start the development server:
-
-```bash
-pnpm install
-pnpm dev
-```
-
-Create a production build with:
-
-```bash
-pnpm build
-```
-
-The project also includes a lightweight syntax check for its browser JavaScript:
-
-```bash
-pnpm check
-```
 
 ## License and attribution
 
