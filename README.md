@@ -4,7 +4,7 @@
 
 This project recreates the visual language of a small late-2000s web widget: a tiny Jesus figure sits at the edge of a bright upper field and black reflective floor, while short speech bubbles rotate overhead. The composition is intentionally spare and avoids adding modern application chrome.
 
-The historical site can still be inspected through an Internet Archive capture.[1]
+The historical site can still be inspected through an [Internet Archive capture (5 February 2009)](https://web.archive.org/web/20090205063029/http://mytinyjesus.com/).
 
 ## Important provenance note
 
@@ -14,12 +14,12 @@ The **200 messages** in this project are **original fictional writing**, created
 
 The runtime is deliberately small and uses **no React or other browser framework**.
 
-| Area                            | Location           | Purpose                                                                 |
-| ------------------------------- | ------------------ | ----------------------------------------------------------------------- |
-| Page structure                  | `index.html`       | The full widget markup and page entry point.                            |
-| Visual styling                  | `css/styles.css`   | Horizon, speech bubble, responsive layout, and reflection mask.         |
-| Widget behaviour                | `js/app.js`        | Message shuffling, 9-second rotation, and click-to-advance interaction. |
-| Message collection              | `js/messages.js`   | The 200 original fictional messages as an ES module.                    |
+| Area               | Location           | Purpose                                                                 |
+| ------------------ | ------------------ | ----------------------------------------------------------------------- |
+| Page structure     | `index.html`       | The full widget markup and page entry point.                            |
+| Visual styling     | `css/styles.css`   | Horizon, speech bubble, responsive layout, and reflection mask.         |
+| Widget behaviour   | `js/app.js`        | Message shuffling, 9-second rotation, and click-to-advance interaction. |
+| Message collection | `js/messages.js`   | The 200 original fictional messages as an ES module.                    |
 | Figure assets      | `images/jesus.png` | Transparent sprite of Jesus.                                            |
 
 ### Behaviour
@@ -32,4 +32,4 @@ This repository is a non-affiliated recreation for preservation and experimentat
 
 ## References
 
-[1]: https://web.archive.org/web/20090205063029/http://mytinyjesus.com/ "Archived MyTinyJesus.com capture — Internet Archive"
+- [1] [Internet Archive capture of MyTinyJesus.com (5 February 2009)](https://web.archive.org/web/20090205063029/http://mytinyjesus.com/)
