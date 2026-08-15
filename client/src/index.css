@@ -1,6 +1,17 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* MyTinyJesus — Faithful Replica of the 2007–2011 Flash widget
+   Stage: pure black. Bubbles: white rounded with Twitter-blue links.
+   Font: Arial/sans-serif at small sizes, exactly as the original. */
+
+.starfield {
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(255,255,255,0.025) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 70%, rgba(255,255,255,0.015) 0%, transparent 50%),
+    #000000;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
