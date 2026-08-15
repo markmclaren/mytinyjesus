@@ -7,7 +7,9 @@
   background: #000;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 html,
 body {
@@ -19,7 +21,9 @@ body {
 }
 
 button,
-a { font: inherit; }
+a {
+  font: inherit;
+}
 
 .tiny-jesus-stage {
   --horizon: 62%;
@@ -46,7 +50,13 @@ a { font: inherit; }
   inset: var(--horizon) 0 0;
   background:
     linear-gradient(180deg, rgba(41, 41, 41, 0.3) 0, transparent 4px),
-    linear-gradient(90deg, rgba(255,255,255,0.025), transparent 22%, transparent 78%, rgba(255,255,255,0.018)),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025),
+      transparent 22%,
+      transparent 78%,
+      rgba(255, 255, 255, 0.018)
+    ),
     #020202;
 }
 
@@ -82,7 +92,7 @@ a { font: inherit; }
   top: calc(var(--horizon) - clamp(150px, 19vw, 212px));
   z-index: 3;
   transform: translateX(-50%);
-  filter: drop-shadow(0 5px 3px rgba(0,0,0,0.18));
+  filter: drop-shadow(0 5px 3px rgba(0, 0, 0, 0.18));
 }
 
 .jesus-reflection {
@@ -92,7 +102,12 @@ a { font: inherit; }
   transform-origin: top center;
   opacity: 0.23;
   filter: grayscale(1) contrast(0.75) brightness(1.35);
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 43%, transparent 92%);
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.4) 43%,
+    transparent 92%
+  );
 }
 
 .jesus-figure img,
@@ -114,16 +129,24 @@ a { font: inherit; }
   border-radius: 8px;
   background: #fff;
   color: #262626;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.18);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
   cursor: pointer;
-  font: 11px/1.36 Arial, Helvetica, sans-serif;
+  font:
+    11px/1.36 Arial,
+    Helvetica,
+    sans-serif;
   text-align: left;
   opacity: 0;
   transform: translateX(-50%) translateY(7px) scale(0.985);
-  transition: opacity 170ms cubic-bezier(0.23, 1, 0.32, 1), transform 170ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 150ms ease-out;
+  transition:
+    opacity 170ms cubic-bezier(0.23, 1, 0.32, 1),
+    transform 170ms cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 150ms ease-out;
 }
 
-.speech-bubble:hover { box-shadow: 0 4px 10px rgba(0,0,0,0.21); }
+.speech-bubble:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.21);
+}
 
 .speech-bubble:focus-visible {
   outline: 2px solid #0084b4;
@@ -149,8 +172,14 @@ a { font: inherit; }
   white-space: nowrap;
 }
 
-.speech-bubble__meta strong { color: #333; font-weight: 700; }
-.speech-bubble__meta em { color: #0084b4; font-style: normal; }
+.speech-bubble__meta strong {
+  color: #333;
+  font-weight: 700;
+}
+.speech-bubble__meta em {
+  color: #0084b4;
+  font-style: normal;
+}
 
 .speech-bubble__meta time {
   margin-left: auto;
@@ -180,7 +209,9 @@ a { font: inherit; }
   letter-spacing: 0.01em;
 }
 
-.floor-note { left: 16px; }
+.floor-note {
+  left: 16px;
+}
 
 .confess-link {
   right: 16px;
@@ -188,15 +219,26 @@ a { font: inherit; }
   text-decoration: none;
   border-bottom: 1px solid #494949;
   padding-bottom: 1px;
-  transition: color 140ms ease-out, border-color 140ms ease-out;
+  transition:
+    color 140ms ease-out,
+    border-color 140ms ease-out;
 }
 
-.confess-link:hover { color: #eee; border-color: #aaa; }
+.confess-link:hover {
+  color: #eee;
+  border-color: #aaa;
+}
 
 @media (max-height: 530px) {
-  .tiny-jesus-stage { --horizon: 59%; }
-  .floor-note { display: none; }
-  .archive-mark { top: 9px; }
+  .tiny-jesus-stage {
+    --horizon: 59%;
+  }
+  .floor-note {
+    display: none;
+  }
+  .archive-mark {
+    top: 9px;
+  }
 }
 
 @media (max-width: 470px) {
@@ -206,6 +248,10 @@ a { font: inherit; }
     --bubble-x: 55%;
     --bubble-tail-x: 67%;
   }
-  .speech-bubble { top: 46px; }
-  .archive-mark span:last-child { display: none; }
+  .speech-bubble {
+    top: 46px;
+  }
+  .archive-mark span:last-child {
+    display: none;
+  }
 }

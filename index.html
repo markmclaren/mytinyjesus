@@ -2,10 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <meta name="description" content="A framework-free recreation of the MyTinyJesus Flash widget." />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    <meta
+      name="description"
+      content="A framework-free recreation of the MyTinyJesus Flash widget."
+    />
     <title>My Tiny Jesus</title>
-    <link rel="stylesheet" href="/vanilla/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <main class="tiny-jesus-stage" aria-label="My Tiny Jesus">
@@ -16,7 +22,11 @@
         <span>mytinyjesus.com</span><i></i><span>saviour 2.0</span>
       </div>
 
-      <button type="button" class="speech-bubble" aria-label="Show the next message">
+      <button
+        type="button"
+        class="speech-bubble"
+        aria-label="Show the next message"
+      >
         <span class="speech-bubble__message"></span>
         <span class="speech-bubble__meta">
           <strong></strong><em></em><time></time>
@@ -25,16 +35,18 @@
       </button>
 
       <div class="jesus-figure" aria-hidden="true">
-        <img src="/manus-storage/jesus_transparent_e866f36b.png" alt="" draggable="false" />
+        <img src="./jesus.png" alt="" draggable="false" />
       </div>
       <div class="jesus-reflection" aria-hidden="true">
-        <img src="/manus-storage/jesus_transparent_e866f36b.png" alt="" draggable="false" />
+        <img src="./jesus.png" alt="" draggable="false" />
       </div>
 
-      <div class="floor-note"><span class="message-count">200</span> fictional messages · click a bubble for another</div>
+      <div class="floor-note">
+        <span class="message-count">200</span> fictional messages · click a
+        bubble for another
+      </div>
       <a class="confess-link" href="mailto:confess@mytinyjesus.com">confess</a>
     </main>
-    <script type="module" src="/vanilla/app.js"></script>
-    <script defer src="%VITE_ANALYTICS_ENDPOINT%/umami" data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
+    <script type="module" src="./app.js"></script>
   </body>
 </html>

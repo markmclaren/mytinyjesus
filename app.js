@@ -13,7 +13,14 @@ import { MESSAGES } from "./messages.js";
   const dateElement = document.querySelector(".speech-bubble__meta time");
   const countElement = document.querySelector(".message-count");
 
-  if (!bubble || !messageElement || !nameElement || !handleElement || !dateElement || messages.length === 0) {
+  if (
+    !bubble ||
+    !messageElement ||
+    !nameElement ||
+    !handleElement ||
+    !dateElement ||
+    messages.length === 0
+  ) {
     return;
   }
 
@@ -35,7 +42,9 @@ import { MESSAGES } from "./messages.js";
 
   function revealCurrent() {
     setMessage(shuffled[index]);
-    window.requestAnimationFrame(() => bubble.classList.add("speech-bubble--visible"));
+    window.requestAnimationFrame(() =>
+      bubble.classList.add("speech-bubble--visible")
+    );
   }
 
   function showNext() {
@@ -50,5 +59,7 @@ import { MESSAGES } from "./messages.js";
   revealCurrent();
   timerId = window.setInterval(showNext, 9000);
   bubble.addEventListener("click", showNext);
-  window.addEventListener("beforeunload", () => window.clearInterval(timerId), { once: true });
+  window.addEventListener("beforeunload", () => window.clearInterval(timerId), {
+    once: true,
+  });
 })();
