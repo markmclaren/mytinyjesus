@@ -13,3 +13,4 @@
 - [x] Merge the user’s latest README edit before pushing the synchronized visual update.
 - [x] Remove the confession link, reduce and edge-align Jesus, and add the floor-blind plus right-side entrance animations.
 - [x] Update the document title to My Tiny Jesus | Saviour 2.1.
+- [x] Make the two entrance animations visibly and reliably play on page load.

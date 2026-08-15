@@ -6,6 +6,7 @@ import { MESSAGES } from "./messages.js";
 (() => {
   const messages = [...MESSAGES];
 
+  const stage = document.querySelector(".tiny-jesus-stage");
   const bubble = document.querySelector(".speech-bubble");
   const messageElement = document.querySelector(".speech-bubble__message");
   const nameElement = document.querySelector(".speech-bubble__meta strong");
@@ -13,6 +14,7 @@ import { MESSAGES } from "./messages.js";
   const countElement = document.querySelector(".message-count");
 
   if (
+    !stage ||
     !bubble ||
     !messageElement ||
     !nameElement ||
@@ -53,7 +55,16 @@ import { MESSAGES } from "./messages.js";
     }, 170);
   }
 
-  window.setTimeout(revealCurrent, 760);
+  function startEntrance() {
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        stage.classList.add("entrance-play");
+        window.setTimeout(revealCurrent, 1440);
+      });
+    });
+  }
+
+  startEntrance();
   timerId = window.setInterval(showNext, 9000);
   bubble.addEventListener("click", showNext);
   window.addEventListener("beforeunload", () => window.clearInterval(timerId), {
