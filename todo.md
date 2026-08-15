@@ -18,3 +18,4 @@
 - [x] Preserve a short visible floor-blind effect when reduced motion is enabled.
 - [x] Increase the text scale, spacing, and contrast without losing the original-style restraint.
 - [x] Apply a clear, accessible web-font stack to the enlarged interface text.
+- [x] Start the black horizon half a Jesus-height above the figure and blind it down to his feet.
