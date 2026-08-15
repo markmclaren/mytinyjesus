@@ -15,3 +15,4 @@
 - [x] Update the document title to My Tiny Jesus | Saviour 2.1.
 - [x] Make the two entrance animations visibly and reliably play on page load.
 - [x] Change the visible Saviour label to 2.1 and place it just below the horizon on the black floor.
+- [x] Preserve a short visible floor-blind effect when reduced motion is enabled.
