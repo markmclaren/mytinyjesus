@@ -65,12 +65,12 @@ a {
 
 .archive-mark {
   position: absolute;
-  top: 14px;
+  top: calc(var(--horizon) + 12px);
   left: 16px;
   display: flex;
   align-items: center;
   gap: 7px;
-  color: #a8a8a8;
+  color: #777;
   font-size: 10px;
   letter-spacing: 0.04em;
   text-transform: lowercase;
@@ -246,7 +246,7 @@ a {
     display: none;
   }
   .archive-mark {
-    top: 9px;
+    top: calc(var(--horizon) + 8px);
   }
 }
 
