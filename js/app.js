@@ -46,13 +46,35 @@ import { MESSAGES } from "./messages.js";
     );
   }
 
-  function showNext() {
+  function showMessage(delta) {
     bubble.classList.remove("speech-bubble--visible");
     window.clearTimeout(transitionId);
     transitionId = window.setTimeout(() => {
-      index = (index + 1) % shuffled.length;
+      index = (index + delta + shuffled.length) % shuffled.length;
       revealCurrent();
     }, 170);
+  }
+
+  function showNext() {
+    showMessage(1);
+  }
+
+  function showPrevious() {
+    showMessage(-1);
+  }
+
+  function handleMessageNavigation(event) {
+    if (event.altKey || event.ctrlKey || event.metaKey) return;
+
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      showNext();
+    }
+
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      showPrevious();
+    }
   }
 
   function startEntrance() {
@@ -67,6 +89,7 @@ import { MESSAGES } from "./messages.js";
   startEntrance();
   timerId = window.setInterval(showNext, 9000);
   bubble.addEventListener("click", showNext);
+  window.addEventListener("keydown", handleMessageNavigation);
   window.addEventListener("beforeunload", () => window.clearInterval(timerId), {
     once: true,
   });
